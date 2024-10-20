@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'customer_navbar.html' %}
+<div class="max-w-2xl mx-auto py-20">
+    <!-- Add Review Heading -->
+    <h2 class="text-3xl font-bold text-gray-800 mb-4">Add Review for {{ restaurant.name }}</h2>
+
+    <!-- Add Review Form -->
+    <form method="POST" class="bg-white p-6 rounded-lg shadow-md">
+        {% csrf_token %}
+        <div class="space-y-4">
+            <!-- Your form fields go here -->
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded shadow-md hover:bg-blue-700 transition duration-150 ease-in-out">
+            Submit Review
+        </button>
+    </form>
+</div>
+
+  {% endblock %}
+  
